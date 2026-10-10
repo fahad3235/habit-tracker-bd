@@ -1,0 +1,87 @@
+'use strict';
+/* UI strings — full EN/BN. User-typed habit names are never translated. */
+const HT_STRINGS = {
+  en: {
+    appTitle: 'Habit Tracker',
+    todayHeading: "Today's check-in",
+    heatmapHeading: 'Last 12 weeks',
+    habitsHeading: 'Habits',
+    less: 'Less', more: 'More',
+    totalCheckins: 'Total check-ins',
+    thisWeek: 'This week',
+    thisMonth: 'This month',
+    bestHabit: 'Best habit',
+    days: 'days',
+    dayStreak: 'day streak',
+    longest: 'Longest',
+    current: 'Current',
+    done: 'Done',
+    undo: 'Undo',
+    log: 'Log',
+    add: 'Add',
+    del: 'Delete',
+    export: 'Export',
+    import: 'Import',
+    clear: 'Clear',
+    sample: 'Sample',
+    namePh: 'Habit name',
+    goalPh: 'Goal (optional)',
+    unitPh: 'Unit (optional)',
+    noHabits: 'No habits yet — add your first one above.',
+    noToday: 'Add a habit to start checking in.',
+    nameRequired: 'Please enter a habit name.',
+    positiveTarget: 'Goal must be a positive number.',
+    confirmClear: 'Delete ALL habits and history? This cannot be undone.',
+    confirmDel: 'Delete this habit and its history?',
+    badImport: 'That file is not a valid habit-tracker export.',
+    foot: 'All data stays in this browser. Export JSON to back it up.',
+    streakUnit: (n) => n === 1 ? 'day' : 'days',
+    last30: 'Last 30 days — tap a day to toggle',
+    of: 'of'
+  },
+  bn: {
+    appTitle: 'হ্যাবিট ট্র্যাকার',
+    todayHeading: 'আজকের চেক-ইন',
+    heatmapHeading: 'গত ১২ সপ্তাহ',
+    habitsHeading: 'অভ্যাসসমূহ',
+    less: 'কম', more: 'বেশি',
+    totalCheckins: 'মোট চেক-ইন',
+    thisWeek: 'এই সপ্তাহে',
+    thisMonth: 'এই মাসে',
+    bestHabit: 'সেরা অভ্যাস',
+    days: 'দিন',
+    dayStreak: 'দিনের স্ট্রিক',
+    longest: 'সর্বোচ্চ',
+    current: 'বর্তমান',
+    done: 'সম্পন্ন',
+    undo: 'বাতিল',
+    log: 'লিখুন',
+    add: 'যোগ করুন',
+    del: 'মুছুন',
+    export: 'এক্সপোর্ট',
+    import: 'ইমপোর্ট',
+    clear: 'মুছুন',
+    sample: 'নমুনা',
+    namePh: 'অভ্যাসের নাম',
+    goalPh: 'লক্ষ্য (ঐচ্ছিক)',
+    unitPh: 'একক (ঐচ্ছিক)',
+    noHabits: 'এখনো কোনো অভ্যাস নেই — উপরে প্রথমটি যোগ করুন।',
+    noToday: 'চেক-ইন শুরু করতে একটি অভ্যাস যোগ করুন।',
+    nameRequired: 'অনুগ্রহ করে অভ্যাসের নাম লিখুন।',
+    positiveTarget: 'লক্ষ্য ধনাত্মক সংখ্যা হতে হবে।',
+    confirmClear: 'সব অভ্যাস ও ইতিহাস মুছে ফেলবেন? এটি ফেরানো যাবে না।',
+    confirmDel: 'এই অভ্যাস ও এর ইতিহাস মুছে ফেলবেন?',
+    badImport: 'ফাইলটি সঠিক হ্যাবিট-ট্র্যাকার এক্সপোর্ট নয়।',
+    foot: 'সব তথ্য এই ব্রাউজারেই থাকে। ব্যাকআপের জন্য JSON এক্সপোর্ট করুন।',
+    streakUnit: (n) => 'দিন',
+    last30: 'গত ৩০ দিন — টগল করতে দিনে ট্যাপ করুন',
+    of: '/'
+  }
+};
+
+const BN_DIGITS = '০১২৩৪৫৬৭৮৯';
+function htLocalizeDigits(s, lang) {
+  s = String(s);
+  if (lang !== 'bn') return s;
+  return s.replace(/[0-9]/g, d => BN_DIGITS[+d]);
+}

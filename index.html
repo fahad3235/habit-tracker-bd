@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habit Tracker BD — হ্যাবিট ট্র্যাকার</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo" aria-hidden="true">🔥</span>
+    <h1 id="appTitle">Habit Tracker</h1>
+  </div>
+  <div class="top-actions">
+    <button id="langBtn" class="btn ghost" type="button">বাংলা</button>
+    <button id="sampleBtn" class="btn ghost" type="button">Sample</button>
+    <button id="exportBtn" class="btn ghost" type="button">Export</button>
+    <button id="importBtn" class="btn ghost" type="button">Import</button>
+    <input id="importFile" type="file" accept="application/json" hidden>
+    <button id="clearBtn" class="btn ghost danger" type="button">Clear</button>
+  </div>
+</header>
+
+<main>
+  <section class="stats" id="statsStrip" aria-label="stats"></section>
+
+  <section class="card">
+    <h2 id="todayHeading">Today's check-in</h2>
+    <div id="todayList" class="today-list"></div>
+    <p id="todayEmpty" class="muted hidden"></p>
+  </section>
+
+  <section class="card">
+    <h2 id="heatmapHeading">Last 12 weeks</h2>
+    <div id="heatmap" class="heatmap" role="img" aria-label="activity heatmap"></div>
+    <div class="heatmap-legend muted"><span id="legendLess">Less</span><span class="cells"><i class="hm hm0"></i><i class="hm hm1"></i><i class="hm hm2"></i><i class="hm hm3"></i><i class="hm hm4"></i></span><span id="legendMore">More</span></div>
+  </section>
+
+  <section class="card">
+    <h2 id="habitsHeading">Habits</h2>
+    <form id="addForm" class="add-form" novalidate>
+      <input id="habitName" type="text" maxlength="60" placeholder="Habit name">
+      <input id="habitColor" type="color" value="#22a06b" title="color" aria-label="color">
+      <input id="habitTarget" type="number" min="1" step="any" placeholder="Goal (optional)">
+      <input id="habitUnit" type="text" maxlength="20" placeholder="Unit (optional)">
+      <button class="btn primary" type="submit" id="addBtn">Add</button>
+    </form>
+    <p id="formError" class="error hidden" role="alert"></p>
+    <div id="habitCards"></div>
+    <p id="habitsEmpty" class="muted hidden"></p>
+  </section>
+</main>
+
+<footer class="muted" id="footNote"></footer>
+<script src="js/streaks.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

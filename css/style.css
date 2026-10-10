@@ -1,0 +1,70 @@
+:root{
+  --bg:#f6f8f7; --card:#ffffff; --ink:#1c2420; --muted:#6b7a72;
+  --line:#e3e9e6; --accent:#22a06b; --accent-soft:#e3f4ec;
+  --danger:#d64545; --radius:14px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans Bengali",sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px}
+.brand h1{font-size:1.25rem;margin:0}
+.logo{font-size:1.5rem}
+.top-actions{display:flex;gap:8px;flex-wrap:wrap}
+main{max-width:960px;margin:0 auto;padding:20px 16px 40px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.card h2{margin:0 0 12px;font-size:1.05rem}
+.muted{color:var(--muted)}
+.hidden{display:none!important}
+.error{color:var(--danger);margin:8px 0 0}
+.btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 14px;cursor:pointer;font-size:.9rem;color:var(--ink)}
+.btn:hover{background:#f0f4f2}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.btn.primary:hover{background:#1b8a5c}
+.btn.ghost{background:transparent}
+.btn.danger{color:var(--danger)}
+.btn.small{padding:4px 10px;font-size:.8rem}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px}
+.stat .v{font-size:1.5rem;font-weight:700}
+.stat .l{font-size:.8rem;color:var(--muted)}
+
+.today-list{display:flex;flex-direction:column;gap:10px}
+.today-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;flex-wrap:wrap}
+.dot{width:14px;height:14px;border-radius:50%;flex:none}
+.today-row .name{font-weight:600;flex:1;min-width:120px}
+.streak-badge{background:var(--accent-soft);color:#0d6b43;border-radius:999px;padding:2px 12px;font-size:.8rem;font-weight:600;white-space:nowrap}
+.goal-wrap{display:flex;gap:8px;align-items:center}
+.goal-wrap input{width:84px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;font-size:.9rem}
+.progress-note{font-size:.85rem;color:var(--muted)}
+
+.heatmap{display:grid;grid-template-rows:repeat(7,14px);grid-auto-flow:column;gap:3px;overflow-x:auto;padding-bottom:4px}
+.hm{width:14px;height:14px;border-radius:3px;background:#eef1ef;display:block}
+.hm1{background:#bfe6d2}.hm2{background:#8bd3ae}.hm3{background:#4fb983}.hm4{background:#1f8a54}
+.heatmap-legend{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:.8rem}
+.heatmap-legend .cells{display:inline-flex;gap:3px}
+
+.add-form{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.add-form input[type=text],.add-form input[type=number]{padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-size:.9rem}
+#habitName{flex:2;min-width:160px}
+#habitTarget{width:130px}
+#habitUnit{width:130px}
+#habitColor{width:44px;height:38px;padding:2px;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer}
+
+.habit-card{border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:12px}
+.habit-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.habit-head .name{font-weight:700}
+.habit-head .spacer{flex:1}
+.day-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(34px,1fr));gap:6px}
+.day-cell{aspect-ratio:1;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;font-size:.75rem;color:var(--ink);padding:0}
+.day-cell:hover{border-color:var(--accent)}
+.day-cell.done{color:#fff;font-weight:700;border-color:transparent}
+.day-cell.today{outline:2px solid var(--accent);outline-offset:1px}
+.day-legend{display:flex;gap:14px;font-size:.78rem;margin-top:8px;flex-wrap:wrap}
+
+footer{text-align:center;padding:18px;font-size:.85rem}
+@media (max-width:640px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .topbar{padding:10px 12px}
+  main{padding:14px 10px 32px}
+}
